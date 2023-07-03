@@ -12,7 +12,7 @@
 
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="My first project with Vue.js"/>
+  <HelloWorld msg="My first project with Vue.js - STAR RATING"/>
 </template>
 
 

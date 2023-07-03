@@ -1,4 +1,5 @@
 <script>
+
   export default {
     name: 'StarRating',
     data() {
@@ -26,17 +27,19 @@
       }
     },
     methods: {
-      handleClick(id) {
-        // const clickedId = parseInt(event.target.id)
+      handleClick() {
+        const clickedId = parseInt(event.target.id)
         this.isClicked = true
         
-        if(id == this.rate) this.rate = 0
-        else this.rate = id
-
-        console.log(id == this.rate, id, this.rate)
+        if(clickedId == this.rate) {
+          this.rate = 0
+          this.selection = 0
+        }
+        else this.rate = clickedId
       },
-      handleHover(id) {
-        this.selection = id
+      handleHover() {
+        const clickedId = parseInt(event.target.id)
+        this.selection = clickedId
       },
       handleMouseOut(){
         console.log(this.rate)
@@ -51,11 +54,11 @@
 
 <template>
   <div>
-    <p id="1" @click="handleClick(1)" @mouseover="handleHover(1)" @mouseout="handleMouseOut" >{{ firstStar }}</p>
-    <p id="2" @click="handleClick(2)" @mouseover="handleHover(2)" @mouseout="handleMouseOut" >{{ secondStar }}</p>
-    <p id="3" @click="handleClick(3)" @mouseover="handleHover(3)" @mouseout="handleMouseOut" >{{ thirdStar }}</p>
-    <p id="4" @click="handleClick(4)" @mouseover="handleHover(4)" @mouseout="handleMouseOut" >{{ fourthStar }}</p>
-    <p id="5" @click="handleClick(5)" @mouseover="handleHover(5)" @mouseout="handleMouseOut" >{{ fifthStar }}</p>
+    <p id="1" @click="handleClick" @mouseover="handleHover" @mouseout="handleMouseOut" >{{ firstStar }}</p>
+    <p id="2" @click="handleClick" @mouseover="handleHover" @mouseout="handleMouseOut" >{{ secondStar }}</p>
+    <p id="3" @click="handleClick" @mouseover="handleHover" @mouseout="handleMouseOut" >{{ thirdStar }}</p>
+    <p id="4" @click="handleClick" @mouseover="handleHover" @mouseout="handleMouseOut" >{{ fourthStar }}</p>
+    <p id="5" @click="handleClick" @mouseover="handleHover" @mouseout="handleMouseOut" >{{ fifthStar }}</p>
   </div>
 </template>
 
