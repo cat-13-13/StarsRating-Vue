@@ -7,8 +7,7 @@
       return {
         rate: 0,
         selection: 0,
-        isClicked: false,
-        msg: ''
+        isClicked: false
       }
     },
 
