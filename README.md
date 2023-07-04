@@ -30,14 +30,16 @@ Para iniciar el proyecto ejecuta el comando `npm run serve`
 
 ## Directorios
 
-src/ # Directorio raíz del código fuente
-|- assets/ # Recursos estáticos como imágenes y fuentes
-|- components/ # Componentes reutilizables
-|- App.vue # Componente principal de la aplicación
-|- main.js # Punto de entrada de la aplicación
+- `src/`: Directorio raíz del código fuente
 
-public/ # Directorio de archivos estáticos públicos
-|- favicon.ico # Archivo de ícono de la página
-|- index.html # Archivo HTML principal
+  - `assets/`: Recursos estáticos como imágenes y fuentes
+  - `components/`: Componentes reutilizables
+  - `App.vue`: Componente principal de la aplicación
+  - `main.js`: Punto de entrada de la aplicación
 
-.gitignore # Archivo de configuración de Git para ignorar archivos/directorios
+- `public/`: Directorio de archivos estáticos públicos
+
+  - `favicon.ico`: Archivo de ícono de la página
+  - `index.html`: Archivo HTML principal
+
+- `.gitignore`: Archivo de configuración de Git para ignorar archivos/directorios
