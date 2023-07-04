@@ -2,13 +2,16 @@
 
   export default {
     name: 'StarRating',
+
     data() {
       return {
         rate: 0,
         selection: 0,
-        isClicked: false
+        isClicked: false,
+        msg: ''
       }
     },
+
     computed: {
       firstStar() {
         return (this.selection || this.rate) >= 1 ? '★' : '☆'
@@ -24,8 +27,14 @@
       },
       fifthStar() {
         return (this.selection || this.rate) >= 5 ? '★' : '☆'
+      },
+      message(){
+        return this.rate == 0 ? 'Valórame!' 
+          : this.rate == 1 ? 'Valoración: 1 estrella'
+          : `Valoración: ${this.rate} estrellas`
       }
     },
+
     methods: {
       handleClick() {
         const clickedId = parseInt(event.target.id)
@@ -54,23 +63,30 @@
 
 <template>
   <div>
-    <p id="1" @click="handleClick" @mouseover="handleHover" @mouseout="handleMouseOut" >{{ firstStar }}</p>
-    <p id="2" @click="handleClick" @mouseover="handleHover" @mouseout="handleMouseOut" >{{ secondStar }}</p>
-    <p id="3" @click="handleClick" @mouseover="handleHover" @mouseout="handleMouseOut" >{{ thirdStar }}</p>
-    <p id="4" @click="handleClick" @mouseover="handleHover" @mouseout="handleMouseOut" >{{ fourthStar }}</p>
-    <p id="5" @click="handleClick" @mouseover="handleHover" @mouseout="handleMouseOut" >{{ fifthStar }}</p>
+    <span id="1" @click="handleClick" @mouseover="handleHover" @mouseout="handleMouseOut" >{{ firstStar }}</span>
+    <span id="2" @click="handleClick" @mouseover="handleHover" @mouseout="handleMouseOut" >{{ secondStar }}</span>
+    <span id="3" @click="handleClick" @mouseover="handleHover" @mouseout="handleMouseOut" >{{ thirdStar }}</span>
+    <span id="4" @click="handleClick" @mouseover="handleHover" @mouseout="handleMouseOut" >{{ fourthStar }}</span>
+    <span id="5" @click="handleClick" @mouseover="handleHover" @mouseout="handleMouseOut" >{{ fifthStar }}</span>
+  </div>
+  <div>
+    <p>{{ message }}</p>
   </div>
 </template>
 
 
 <style scoped>
-  p {
-    color: gold;
-    font-size: 50px;
-  }
   div {
     display: flex;
     flex-direction: row;
     justify-content: center;
+  }
+  span {
+    color: gold;
+    font-size: 50px;
+  }
+  p{
+    font-size: 1.6rem;
+    margin: 0;
   }
 </style>
